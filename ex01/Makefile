@@ -6,11 +6,11 @@
 #    By: cdeville <cdeville@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/12 16:23:30 by peanut            #+#    #+#              #
-#    Updated: 2024/09/27 11:58:49 by cdeville         ###   ########.fr        #
+#    Updated: 2024/10/01 16:50:34 by cdeville         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=BraiiiiiiinnnzzzZ
+NAME=fixed_intro
 
 CC=c++
 
@@ -21,9 +21,7 @@ DEBUG = -g
 SRC_DIR = ./
 
 SRC =	main.cpp \
-		newZombie.cpp \
-		randomChump.cpp \
-		Zombie.cpp
+		Fixed.cpp
 
 SRCS = $(addprefix $(SRC_DIR), $(SRC))
 
