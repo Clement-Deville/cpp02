@@ -6,11 +6,13 @@
 /*   By: cdeville <cdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 13:18:47 by cdeville          #+#    #+#             */
-/*   Updated: 2024/10/04 16:00:57 by cdeville         ###   ########.fr       */
+/*   Updated: 2024/10/04 17:24:31 by cdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+
+/* CONSTRUCTORS/DESTRUCTORS */
 
 Fixed::Fixed()
 {
@@ -26,14 +28,6 @@ Fixed::Fixed(const int nb)
 
 Fixed::Fixed(const float f_nb)
 {
-	// int	real;
-	// float	cpy;
-
-	// cpy = f_nb;
-	// real = f_nb;
-	// this->_FixedPoint_value = real << this->_bit_size;
-	// this->_FixedPoint_value += (int)(std::roundf((float)std::modf(cpy, &cpy)))
-	// 	<< (sizeof(int) * 8 - this->_bit_size) >> (sizeof(int) * 8 - this->_bit_size);
 	std::cout << "\e[0;32mFloat constructor called\e[0m" << std::endl;
 	_FixedPoint_value = (int)(f_nb * float(1 << _bit_size) + (f_nb >= 0 ? 0.5 : -0.5));
 }
@@ -49,10 +43,7 @@ Fixed::~Fixed()
 	std::cout << "\e[0;31mDestructor called\e[0m" << std::endl;
 }
 
-float Fixed::toFloat( void ) const
-{
-	return (float(_FixedPoint_value) / float(1 <<_bit_size));
-}
+/* OPERATORS */
 
 Fixed &Fixed::operator=(const Fixed &a)
 {
@@ -66,6 +57,8 @@ std::ostream & operator << (std::ostream &os, const Fixed &b)
 	os << b.toFloat();
 	return (os);
 }
+
+/* FUNCTIONS */
 
 int	Fixed::getRawBits( void ) const
 {
@@ -83,36 +76,8 @@ int Fixed::toInt( void ) const
 	return (roundf(toFloat()));
 }
 
+float Fixed::toFloat( void ) const
+{
+	return (float(_FixedPoint_value) / float(1 <<_bit_size));
+}
 
-// float	get_real(Fixed a, int b_size)
-// {
-// 	float	number;
-
-// 	// number = 0;
-// 	// (void)b_size;
-// 	// for (int x = 0; x < ((int)(sizeof(int) * 8)) - b_size - 1; x++)
-// 	// {
-// 	// 	// number += (a.getRawBits() << (x + 8)) * std::pow(2, x);
-// 	// 	number+= ((a.getRawBits() & ( 1 << x )) >> x) * std::pow(2, x);
-// 	// }
-// 	number = (a.getRawBits()) >> b_size;
-// 	std::cout << number << std::endl;
-// 	return (number);
-// }
-
-// float	get_deci(Fixed a, int b_size)
-// {
-// 	float	deci;
-
-// 	deci = (a.getRawBits()) << ((sizeof(int)* 8) - b_size) >> b_size;
-// 	std::cout << deci << std::endl;
-// 	return (deci);
-// }
-
-// float Fixed::toFloat( void ) const
-// {
-// 	float	number;
-
-// 	number = get_real(*this, this->_bit_size) + get_deci(*this, this->_bit_size);
-// 	return (number);
-// }

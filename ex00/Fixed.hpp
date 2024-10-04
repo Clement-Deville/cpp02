@@ -6,7 +6,7 @@
 /*   By: cdeville <cdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 13:19:02 by cdeville          #+#    #+#             */
-/*   Updated: 2024/10/02 16:31:02 by cdeville         ###   ########.fr       */
+/*   Updated: 2024/10/04 17:27:28 by cdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,8 @@
 class Fixed
 {
 private:
-	int					fp_size;
+	int					_FixedPoint_value;
 	static const int	bit_size = 8;
-	char 				*str;
 public:
 	Fixed();
 	Fixed(Fixed &Cpy);
