@@ -6,7 +6,7 @@
 /*   By: cdeville <cdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 13:19:02 by cdeville          #+#    #+#             */
-/*   Updated: 2024/10/03 15:36:33 by cdeville         ###   ########.fr       */
+/*   Updated: 2024/10/04 15:58:40 by cdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ public:
 	int getRawBits( void ) const;
 	void setRawBits( int const raw );
 	float toFloat( void ) const;
-	// int toInt( void ) const;
+	int toInt( void ) const;
 };
 
 	std::ostream & operator << (std::ostream &os, const Fixed &b);
