@@ -6,7 +6,7 @@
 /*   By: cdeville <cdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 13:19:02 by cdeville          #+#    #+#             */
-/*   Updated: 2024/10/04 19:29:05 by cdeville         ###   ########.fr       */
+/*   Updated: 2024/10/07 15:06:39 by cdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <iostream>
 #include <cmath>
+
+void	print_bit(size_t size, const void *value);
 
 class Fixed
 {

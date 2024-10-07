@@ -6,7 +6,7 @@
 /*   By: cdeville <cdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 13:18:47 by cdeville          #+#    #+#             */
-/*   Updated: 2024/10/04 17:24:31 by cdeville         ###   ########.fr       */
+/*   Updated: 2024/10/07 15:08:13 by cdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@ Fixed::Fixed()
 Fixed::Fixed(const int nb)
 {
 	std::cout << "\e[0;32mInt constructor called\e[0m" << std::endl;
+	print_bit(4, &nb);
 	this->_FixedPoint_value = nb << this->_bit_size;
+	print_bit(4, &this->_FixedPoint_value);
 }
 
 Fixed::Fixed(const float f_nb)
