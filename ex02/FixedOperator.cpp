@@ -65,20 +65,6 @@ void	print_bit(size_t size, const void *value)
 
 }
 
-// Fixed Fixed::operator * (const Fixed &a)
-// {
-// 	// Fixed	a;
-// 	// int		result;
-
-// 	// result = (u_int64_t(this->_FixedPoint_value) << _bit_size * u_int64_t(a._FixedPoint_value) << _bit_size) >> _bit_size;
-// 	// a.setRawBits(result);
-// 	// return (a);
-// 	Fixed tmp;
-
-// 	tmp.setRawBits(u_int64_t((this->_FixedPoint_value) * u_int64_t(a._FixedPoint_value)) >> _bit_size);
-// 	return (tmp);
-// }
-
 Fixed Fixed::operator * (const Fixed &a)
 {
 	// Fixed	a;
@@ -89,25 +75,48 @@ Fixed Fixed::operator * (const Fixed &a)
 	// return (a);
 	Fixed tmp;
 
-	std::cout << "This:     ";
-	print_bit(sizeof(int), &this->_FixedPoint_value);
-	std::cout << "A:        ";
-	print_bit(sizeof(int), &a._FixedPoint_value);
-	tmp.setRawBits(((this->_FixedPoint_value) * (a._FixedPoint_value)) >> _bit_size);
-	int temp = tmp.getRawBits();
-	std::cout << "This * A: ";
-	print_bit(sizeof(int), &temp);
+	tmp.setRawBits(u_int64_t((this->_FixedPoint_value) * u_int64_t(a._FixedPoint_value)) >> _bit_size);
 	return (tmp);
 }
+
+// Fixed Fixed::operator * (const Fixed &a)
+// {
+// 	// Fixed	a;
+// 	// int		result;
+
+// 	// result = (u_int64_t(this->_FixedPoint_value) << _bit_size * u_int64_t(a._FixedPoint_value) << _bit_size) >> _bit_size;
+// 	// a.setRawBits(result);
+// 	// return (a);
+// 	Fixed tmp;
+
+// 	// std::cout << "This:     ";
+// 	// print_bit(sizeof(int), &this->_FixedPoint_value);
+// 	// std::cout << "A:        ";
+// 	// print_bit(sizeof(int), &a._FixedPoint_value);
+// 	tmp.setRawBits(((this->_FixedPoint_value) * (a._FixedPoint_value)) >> _bit_size);
+// 	// int temp = tmp.getRawBits();
+// 	// std::cout << "This * A: ";
+// 	// print_bit(sizeof(int), &temp);
+// 	return (tmp);
+// }
+
+
+// Fixed Fixed::operator / (const Fixed &a)
+// {
+// 	Fixed tmp;
+
+// 	tmp.setRawBits(this->getRawBits() / a.getRawBits());
+// 	return (tmp);
+// }
 
 Fixed Fixed::operator / (const Fixed &a)
 {
 	Fixed tmp;
 
 	u_int64_t temp_int = u_int64_t(this->getRawBits()) << 16;
-	temp_int = u_int64_t(this->getRawBits()) << 16;
+	temp_int = u_int64_t(this->getRawBits()) << 8;
 	temp_int /= u_int64_t(a.getRawBits());
-	temp_int = temp_int >> 8;
+	// temp_int = temp_int >> 8;
 	tmp.setRawBits((int)temp_int);
 	return (tmp);
 }
