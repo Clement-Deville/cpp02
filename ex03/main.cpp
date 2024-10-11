@@ -6,14 +6,14 @@
 /*   By: cdeville <cdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:04:35 by cdeville          #+#    #+#             */
-/*   Updated: 2024/10/11 19:31:26 by cdeville         ###   ########.fr       */
+/*   Updated: 2024/10/11 19:03:47 by cdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <iostream>
 
-int main( void )
+int	main( void )
 {
 	Fixed a;
 	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );

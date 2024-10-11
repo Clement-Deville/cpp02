@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   bsp.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdeville <cdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/01 15:04:35 by cdeville          #+#    #+#             */
-/*   Updated: 2024/10/11 19:31:26 by cdeville         ###   ########.fr       */
+/*   Created: 2024/10/11 16:55:40 by cdeville          #+#    #+#             */
+/*   Updated: 2024/10/11 19:56:04 by cdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
-#include <iostream>
+#include "Point.hpp"
 
-int main( void )
+
+bool	bsp( Point const a, Point const b, Point const c, Point const point)
 {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << (a / b) << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
-	return (0);
+	Fixed w1;
+
+	w1 = a.getY() * (b.getX() - a.getX())
+		+ (point.getX() - a.getX()) * (b.getY() - a.getY())
+		- point.getY() * (b.getX() - a.getX());
+	w1 /= (c.getX() - a.getX()) * (b.getY() - a.getY())
+		- (c.getY() - a.getY()) * (b.getX() - a.getX());
 }

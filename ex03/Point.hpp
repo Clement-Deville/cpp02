@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdeville <cdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/01 15:04:35 by cdeville          #+#    #+#             */
-/*   Updated: 2024/10/11 19:31:26 by cdeville         ###   ########.fr       */
+/*   Created: 2024/10/11 16:31:18 by cdeville          #+#    #+#             */
+/*   Updated: 2024/10/11 19:48:08 by cdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
-#include <iostream>
+#ifndef POINT_HPP
+# define POINT_HPP
 
-int main( void )
+# include "Fixed.hpp"
+
+class Point
 {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << (a / b) << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
-	return (0);
-}
+private:
+	Fixed const x;
+	Fixed const y;
+public:
+	Point(void);
+	Point(const float fx, const float fy);
+	Point(const Point &Cpy);
+	~Point();
+
+	Point & operator = (const Point &a);
+
+	Fixed getX(void) const;
+	Fixed getY(void) const;
+};
+
+
+#endif
