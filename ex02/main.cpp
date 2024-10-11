@@ -6,7 +6,7 @@
 /*   By: cdeville <cdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:04:35 by cdeville          #+#    #+#             */
-/*   Updated: 2024/10/11 12:37:20 by cdeville         ###   ########.fr       */
+/*   Updated: 2024/10/11 12:38:21 by cdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ int main( void )
 	std::cout << b << std::endl;
 	std::cout << (a / b) << std::endl;
 	std::cout << Fixed::max( a, b ) << std::endl;
-	return 0;
+	return (0);
 }
