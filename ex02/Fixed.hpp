@@ -6,7 +6,7 @@
 /*   By: cdeville <cdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 13:19:02 by cdeville          #+#    #+#             */
-/*   Updated: 2024/10/07 15:06:39 by cdeville         ###   ########.fr       */
+/*   Updated: 2024/10/09 16:30:25 by cdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,24 @@ public:
 	bool operator != (const Fixed &a);
 
 	Fixed operator + (const Fixed &a);
+	Fixed &operator += (const Fixed &a);
 	Fixed operator - (const Fixed &a);
+	Fixed &operator -= (const Fixed &a);
 	Fixed operator * (const Fixed &a);
+	Fixed &operator *= (const Fixed &a);
 	Fixed operator / (const Fixed &a);
+	Fixed &operator /= (const Fixed &a);
+
+	Fixed &operator ++ (void);
+	Fixed operator ++ (int);
+	Fixed &operator -- (void);
+	Fixed operator -- (int);
+
+	static Fixed& min(Fixed &a, Fixed &b);
+	static const Fixed& min(const Fixed &a, const Fixed &b);
+	static Fixed& max(Fixed &a, Fixed &b);
+	static const Fixed& max(const Fixed &a, const Fixed &b);
+
 
 	int getRawBits( void ) const;
 	void setRawBits( int const raw );

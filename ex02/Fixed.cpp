@@ -6,14 +6,15 @@
 /*   By: cdeville <cdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 13:18:47 by cdeville          #+#    #+#             */
-/*   Updated: 2024/10/08 11:13:07 by cdeville         ###   ########.fr       */
+/*   Updated: 2024/10/09 15:31:12 by cdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-/* CONSTRUCTORS/DESTRUCTORS */
-
+/************************************************************/
+/* 					CONSTRUCTORS/DESTRUCTORS				*/
+/************************************************************/
 Fixed::Fixed()
 {
 	std::cout << "\e[0;32mDefault constructor called\e[0m" << std::endl;
@@ -23,9 +24,7 @@ Fixed::Fixed()
 Fixed::Fixed(const int nb)
 {
 	std::cout << "\e[0;32mInt constructor called\e[0m" << std::endl;
-	print_bit(4, &nb);
 	this->_FixedPoint_value = nb << this->_bit_size;
-	print_bit(4, &this->_FixedPoint_value);
 }
 
 Fixed::Fixed(const float f_nb)
@@ -60,7 +59,48 @@ std::ostream & operator << (std::ostream &os, const Fixed &b)
 	return (os);
 }
 
-/* FUNCTIONS */
+/************************************************************/
+/* 					STATIC FUNCTIONS 						*/
+/************************************************************/
+
+/*	Takes as parameters two references to fixed-point numbers, and returns a reference to the smallest one, if they
+	are equals, returns the first one */
+
+Fixed& Fixed::min(Fixed &a, Fixed &b)
+{
+	return (a.getRawBits() <= b.getRawBits() ? a : b);
+}
+
+/*	Takes as parameters two references to constant fixed-point numbers,
+	and returns a reference to the smallest one, if theyare equals,
+	returns the first one */
+
+const Fixed& Fixed::min(const Fixed &a, const Fixed &b)
+{
+	return (a.getRawBits() <= b.getRawBits() ? a : b);
+}
+
+/*	Takes as parameters two references to fixed-point numbers,
+	and returns a reference to the smallest one, if they
+	are equals, returns the first one */
+
+Fixed& Fixed::max(Fixed &a, Fixed &b)
+{
+	return (a.getRawBits() >= b.getRawBits() ? a : b);
+}
+
+/*	Takes as parameters two references to constant
+	fixed-point numbers, and returns a reference to the smallest one,
+	if they are equals, returns the first one */
+
+const Fixed& Fixed::max(const Fixed &a, const Fixed &b)
+{
+	return (a.getRawBits() >= b.getRawBits() ? a : b);
+}
+
+/************************************************************/
+/* 					FUNCTIONS 								*/
+/************************************************************/
 
 int	Fixed::getRawBits( void ) const
 {
