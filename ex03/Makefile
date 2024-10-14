@@ -6,7 +6,7 @@
 #    By: cdeville <cdeville@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/12 16:23:30 by peanut            #+#    #+#              #
-#    Updated: 2024/10/04 19:28:04 by cdeville         ###   ########.fr        #
+#    Updated: 2024/10/14 12:24:04 by cdeville         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,8 @@ SRC_DIR = ./
 SRC =	main.cpp \
 		FixedOperator.cpp \
 		Fixed.cpp \
+		Point.cpp \
+		bsp.cpp \
 
 SRCS = $(addprefix $(SRC_DIR), $(SRC))
 

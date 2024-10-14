@@ -6,24 +6,39 @@
 /*   By: cdeville <cdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:04:35 by cdeville          #+#    #+#             */
-/*   Updated: 2024/10/11 19:03:47 by cdeville         ###   ########.fr       */
+/*   Updated: 2024/10/14 19:28:54 by cdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+#include "Point.hpp"
 #include <iostream>
+
+bool	bsp( Point const a, Point const b, Point const c, Point const point);
 
 int	main( void )
 {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << (a / b) << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
+	if (bsp(Point(4.0f, 3.0f),
+			Point(3.0f, 2.0f),
+			Point(1.0f, 0.0f),
+			Point(2.0f,3.0f)))
+		std::cout << "The point " << Point(2,3) << " is in the Triangle"
+			<< std::endl;
+	else
+	{
+		std::cout << "The point " << Point(2,3) << " is not in the Triangle"
+			<< std::endl;
+	}
+	if (bsp(Point(4.0f, 3.0f),
+			Point(3.0f, 3.0f),
+			Point(1.0f, 0.0f),
+			Point(2.0f,3.0f)))
+		std::cout << "The point " << Point(2,3) << " is in the Triangle"
+			<< std::endl;
+	else
+	{
+		std::cout << "The point " << Point(2,3) << " is not in the Triangle"
+			<< std::endl;
+	}
 	return (0);
 }

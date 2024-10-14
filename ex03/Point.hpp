@@ -6,7 +6,7 @@
 /*   By: cdeville <cdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 16:31:18 by cdeville          #+#    #+#             */
-/*   Updated: 2024/10/11 19:48:08 by cdeville         ###   ########.fr       */
+/*   Updated: 2024/10/14 12:28:27 by cdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,6 @@ public:
 	Fixed getY(void) const;
 };
 
+std::ostream & operator << (std::ostream &os, const Point &b);
 
 #endif
