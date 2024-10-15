@@ -6,7 +6,7 @@
 /*   By: cdeville <cdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 16:55:40 by cdeville          #+#    #+#             */
-/*   Updated: 2024/10/14 19:26:54 by cdeville         ###   ########.fr       */
+/*   Updated: 2024/10/15 12:47:55 by cdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,10 @@ int	check_degenerate_triangle(Point const a, Point const b, Point const c)
 	return (false);
 }
 
-
 bool	bsp( Point const a, Point const b, Point const c, Point const point)
 {
 	Fixed w1;
 	Fixed w2;
-
-	// std::cout << a << b << c << point << std::endl;
-	// std::cout << (b.getY() - a.getY()) * (c.getX() - a.getX())
-	// 		- (b.getX() - a.getX()) * (c.getY() - a.getY()) << std::endl;
 
 	if (check_degenerate_triangle(a, b, c) == true)
 	{
@@ -69,4 +64,3 @@ bool	bsp( Point const a, Point const b, Point const c, Point const point)
 		return (true);
 	return (false);
 }
-
