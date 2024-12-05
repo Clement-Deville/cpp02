@@ -6,11 +6,11 @@
 #    By: cdeville <cdeville@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/12 16:23:30 by peanut            #+#    #+#              #
-#    Updated: 2024/10/15 12:49:02 by cdeville         ###   ########.fr        #
+#    Updated: 2024/12/05 17:38:42 by cdeville         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=fixed_intro
+NAME=grand_master_fixed
 
 CC=c++
 

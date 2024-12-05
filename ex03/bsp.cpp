@@ -6,7 +6,7 @@
 /*   By: cdeville <cdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 16:55:40 by cdeville          #+#    #+#             */
-/*   Updated: 2024/10/15 12:47:55 by cdeville         ###   ########.fr       */
+/*   Updated: 2024/12/05 18:29:10 by cdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 int	check_degenerate_triangle(Point const a, Point const b, Point const c)
 {
-	std::cout << "YO: " << ((c.getY() - a.getY()) * (b.getX() - a.getX())
-	- (b.getY() - a.getY()) * (c.getX() - a.getX()))
-	/ (c.getX() - a.getX()) << std::endl;
+	//! NOT FIXED 
 	if (((c.getY() - a.getY()) * (b.getX() - a.getX())
 	- (b.getY() - a.getY()) * (c.getX() - a.getX()))
 	/ (c.getX() - a.getX())

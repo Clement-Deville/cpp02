@@ -6,7 +6,7 @@
 /*   By: cdeville <cdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 16:32:16 by cdeville          #+#    #+#             */
-/*   Updated: 2024/10/15 12:46:42 by cdeville         ###   ########.fr       */
+/*   Updated: 2024/12/05 17:49:10 by cdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,23 @@
 
 Point::Point(void) : x(0), y(0)
 {
-	std::cout << "\e[0;32mDefault constructor called\e[0m" << std::endl;
+	// std::cout << "\e[0;32mDefault constructor called\e[0m" << std::endl;
 }
 
 Point::Point(const float fx, const float fy) : x(fx), y(fy)
 {
-	std::cout << "\e[0;32mFloat constructor called\e[0m" << std::endl;
+	// std::cout << "\e[0;32mFloat constructor called\e[0m" << std::endl;
 }
 
 Point::Point(const Point &Cpy) : x(Cpy.x), y(Cpy.y)
 {
-	std::cout << "\e[0;32mCopy constructor called\e[0m"
-		<< std::endl;
+	// std::cout << "\e[0;32mCopy constructor called\e[0m"
+	// 	<< std::endl;
 }
 
 Point::~Point()
 {
-	std::cout << "\e[0;31mDestructor called\e[0m" << std::endl;
+	// std::cout << "\e[0;31mDestructor called\e[0m" << std::endl;
 }
 
 /**========================================================================
@@ -39,8 +39,8 @@ Point::~Point()
 
 Point & Point::operator = (const Point &a)
 {
-	std::cout << "\e[0;32mCopy assignement operator called\e[0m"
-		<< std::endl;
+	// std::cout << "\e[0;32mCopy assignement operator called\e[0m"
+	// 	<< std::endl;
 	(void)a;
 	return (*this);
 }
