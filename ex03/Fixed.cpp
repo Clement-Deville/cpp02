@@ -6,7 +6,7 @@
 /*   By: cdeville <cdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 13:18:47 by cdeville          #+#    #+#             */
-/*   Updated: 2024/12/05 17:48:38 by cdeville         ###   ########.fr       */
+/*   Updated: 2024/12/06 14:56:42 by cdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -162,7 +162,10 @@ bool Fixed::operator != (const Fixed &a)
 
 Fixed Fixed::operator + (const Fixed &a)
 {
-	return (Fixed(this->getRawBits() + a.getRawBits()));
+	Fixed tmp;
+
+	tmp.setRawBits(this->getRawBits() + a.getRawBits());
+	return (tmp);
 }
 
 Fixed &Fixed::operator += (const Fixed &a)
@@ -173,7 +176,10 @@ Fixed &Fixed::operator += (const Fixed &a)
 
 Fixed Fixed::operator - (const Fixed &a)
 {
-	return (Fixed(this->getRawBits() - a.getRawBits()));
+	Fixed tmp;
+
+	tmp.setRawBits(this->getRawBits() - a.getRawBits());
+	return (tmp);
 }
 
 Fixed &Fixed::operator -= (const Fixed &a)

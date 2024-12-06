@@ -6,19 +6,46 @@
 /*   By: cdeville <cdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 16:55:40 by cdeville          #+#    #+#             */
-/*   Updated: 2024/12/05 18:29:10 by cdeville         ###   ########.fr       */
+/*   Updated: 2024/12/06 14:53:43 by cdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 
-int	check_degenerate_triangle(Point const a, Point const b, Point const c)
+Fixed	vector_size(const Point &A, const Point &B)
 {
-	//! NOT FIXED 
-	if (((c.getY() - a.getY()) * (b.getX() - a.getX())
-	- (b.getY() - a.getY()) * (c.getX() - a.getX()))
-	/ (c.getX() - a.getX())
-	== Fixed(0))
+	Fixed ab_size;
+	// float tmp;
+
+	std::cout << "A: " << A << std::endl;
+	std::cout << "B: " << B << std::endl;
+	// ab_size = ((B.getX() - A.getX()) * (B.getX() - A.getX())
+	// 	+ (B.getY() - A.getY()) * (B.getY() - A.getY()));
+	ab_size = (B.getX() - A.getX());
+	std::cout << "ab_size " << ab_size << std::endl;
+	std::cout << "TMP: " << ab_size.toFloat() << std::endl;
+	ab_size = Fixed((float)std::sqrt((double)ab_size.toFloat()));
+	return (ab_size);
+}
+
+bool	check_degenerate_triangle(Point const a, Point const b, Point const c)
+{
+	// //! NOT FIXED
+	// if (((c.getY() - a.getY()) * (b.getX() - a.getX())
+	// - (b.getY() - a.getY()) * (c.getX() - a.getX()))
+	// / (c.getX() - a.getX())
+	// == Fixed(0))
+	// 	return (true);
+	// return (false);
+	Fixed ab_size = vector_size(a, b);
+	Fixed bc_size = vector_size(c, b);
+	Fixed ac_size = vector_size(a, c);
+
+	std::cout << "Side sizes:\nAB: " << ab_size << "\nBC: "
+		<< bc_size << "\nAC: " << ac_size << std::endl;
+	if ((vector_size(a, b) + vector_size(b, c) <= vector_size(a, c))
+		&& (vector_size(a, c) + vector_size(b, c) <= vector_size(a, b))
+		&& (vector_size(a, b) + vector_size(a, c) <= vector_size(b, c)))
 		return (true);
 	return (false);
 }
