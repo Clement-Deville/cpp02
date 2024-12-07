@@ -6,7 +6,7 @@
 /*   By: cdeville <cdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 16:55:40 by cdeville          #+#    #+#             */
-/*   Updated: 2024/12/06 18:43:17 by cdeville         ###   ########.fr       */
+/*   Updated: 2024/12/07 16:54:56 by cdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,17 @@ Fixed	vector_size(const Point &A, const Point &B)
 	return (ab_size);
 }
 
+Fixed	get_area(const Point &A, const Point &B, const Point &C)
+{
+	Fixed	Base, Height;
+
+	Base = vector_size(A, B);
+	Height = 
+}
+
 bool	check_degenerate_triangle(Point const a, Point const b, Point const c)
 {
-	// //! NOT FIXED
+	// //! NOT FIXED ?
 	// if (((c.getY() - a.getY()) * (b.getX() - a.getX())
 	// - (b.getY() - a.getY()) * (c.getX() - a.getX()))
 	// / (c.getX() - a.getX())
@@ -112,7 +120,10 @@ bool	bsp( Point const a, Point const b, Point const c, Point const point)
 	}
 	else
 	{
-		
+		w2 =
+
+		w1 = Py - Ay - w2 * (Cy - Ay);
+		w1 /= By - Ay;
 	}
 	std::cout << "\nSTD::\nW1: " << w1 << "\nW2: " << w2 << std::endl;
 	if (w1 >= Fixed(0)
