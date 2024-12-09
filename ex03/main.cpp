@@ -6,7 +6,7 @@
 /*   By: cdeville <cdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:04:35 by cdeville          #+#    #+#             */
-/*   Updated: 2024/12/09 20:17:56 by cdeville         ###   ########.fr       */
+/*   Updated: 2024/12/09 23:13:27 by cdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,12 +54,11 @@ int	main( void )
 	 "*=============================================**/\n" << std::endl;
 	{
 		Point P1(3, 0);
-		Point P2(1.5, 0.75);
-		Point P3(4.5, 1.5);
+		Point P2(0.75, 1.5);
+		Point P3(5, 2);
 		Point P4(0, 0);
 		Point P5(6, 0);
 
-		//! Probleme de precision pour les edges 
 		Point *tab[5] = {&P1, &P2, &P3, &P4, &P5};
 
 		for (int i = 0; i < 5; i++)
@@ -86,7 +85,6 @@ int	main( void )
 		Point P4(3, 7);
 		Point P5(5, 5);
 
-		//! Probleme de precision pour les edges 
 		Point *tab[5] = {&P1, &P2, &P3, &P4, &P5};
 
 		for (int i = 0; i < 5; i++)
@@ -103,49 +101,3 @@ int	main( void )
 	}
 	return (0);
 }
-
-// int	main( void )
-// {
-// 	if (bsp(Point(4.0f, 3.0f),
-// 			Point(3.0f, 2.0f),
-// 			Point(1.0f, 0.0f),
-// 			Point(2.0f,3.0f)))
-// 		std::cout << "The point " << Point(2,3) << " is in the Triangle"
-// 			<< std::endl;
-// 	else
-// 	{
-// 		std::cout << "The point " << Point(2,3) << " is not in the Triangle"
-// 			<< std::endl;
-// 	}
-// 	if (bsp(Point(10.0f, -5.0f),
-// 			Point(3.5f, 6.0f),
-// 			Point(-1.0f, -5.0f),
-// 			Point(2.0f, 3.0f)))
-// 		std::cout << "The point " << Point(2,3) << " is in the Triangle"
-// 		<< Point(10.0f, -5.0f) << " " << Point(3.5f, 6.0f)
-// 		<< " " << Point(-1.0f, -5.0f)
-// 			<< std::endl;
-// 	else
-// 	{
-// 		std::cout << "The point " << Point(2,3) << " is not in the Triangle"
-// 		<< Point(10.0f, -5.0f) << " " << Point(3.5f, 6.0f)
-// 		<< " " << Point(-1.0f, -5.0f)
-// 			<< std::endl;
-// 	}
-// 	if (bsp(Point(1.0f, 2.0f),
-// 			Point(1.f, -1.0f),
-// 			Point(-1.0f, -2.0f),
-// 			Point(3.0f, 3.0f)))
-// 		std::cout << "The point " << Point(3,3) << " is in the Triangle"
-// 		<< Point(1.0f, 2.0f) << " " << Point(1.0f, -1.0f)
-// 		<< " " << Point(-1.0f, -2.0f)
-// 			<< std::endl;
-// 	else
-// 	{
-// 		std::cout << "The point " << Point(2,3) << " is not in the Triangle"
-// 		<< Point(10.0f, -5.0f) << " " << Point(3.5f, 6.0f)
-// 		<< " " << Point(-1.0f, -5.0f)
-// 			<< std::endl;
-// 	}
-// 	return (0);
-// }
