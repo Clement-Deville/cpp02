@@ -6,7 +6,7 @@
 /*   By: cdeville <cdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 13:18:47 by cdeville          #+#    #+#             */
-/*   Updated: 2024/12/06 14:58:01 by cdeville         ###   ########.fr       */
+/*   Updated: 2024/12/10 11:44:56 by cdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,32 +125,32 @@ float Fixed::toFloat( void ) const
 
 /*	Comparaison operator */
 
-bool Fixed::operator > (const Fixed &a)
+bool Fixed::operator > (const Fixed &a) const
 {
 	return (this->getRawBits() > a.getRawBits() ? true : false);
 }
 
-bool Fixed::operator < (const Fixed &a)
+bool Fixed::operator < (const Fixed &a) const
 {
 	return (this->getRawBits() < a.getRawBits() ? true : false);
 }
 
-bool Fixed::operator >= (const Fixed &a)
+bool Fixed::operator >= (const Fixed &a) const
 {
 	return (this->getRawBits() >= a.getRawBits() ? true : false);
 }
 
-bool Fixed::operator <= (const Fixed &a)
+bool Fixed::operator <= (const Fixed &a) const
 {
 	return (this->getRawBits() <= a.getRawBits() ? true : false);
 }
 
-bool Fixed::operator == (const Fixed &a)
+bool Fixed::operator == (const Fixed &a) const
 {
 	return (this->getRawBits() == a.getRawBits() ? true : false);
 }
 
-bool Fixed::operator != (const Fixed &a)
+bool Fixed::operator != (const Fixed &a) const
 {
 	return (this->getRawBits() != a.getRawBits() ? true : false);
 }
@@ -159,7 +159,7 @@ bool Fixed::operator != (const Fixed &a)
 /*	Operation operator */
 
 
-Fixed Fixed::operator + (const Fixed &a)
+Fixed Fixed::operator + (const Fixed &a) const
 {
 	Fixed tmp;
 
@@ -173,7 +173,7 @@ Fixed &Fixed::operator += (const Fixed &a)
 	return (*this);
 }
 
-Fixed Fixed::operator - (const Fixed &a)
+Fixed Fixed::operator - (const Fixed &a) const
 {
 	Fixed tmp;
 
@@ -204,7 +204,7 @@ void	print_bit(size_t size, const void *value)
 
 	Explications : http://www.coranac.com/tonc/text/fixed.htm */
 
-Fixed Fixed::operator * (const Fixed &a)
+Fixed Fixed::operator * (const Fixed &a) const
 {
 	Fixed tmp;
 
@@ -222,7 +222,7 @@ Fixed &Fixed::operator *= (const Fixed &a)
 	_bit_size bits pour eviter underflow du a l'underscale d'une division
 	Explications : http://www.coranac.com/tonc/text/fixed.htm */
 
-Fixed Fixed::operator / (const Fixed &a)
+Fixed Fixed::operator / (const Fixed &a) const
 {
 	Fixed tmp;
 

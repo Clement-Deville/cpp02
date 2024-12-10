@@ -6,7 +6,7 @@
 /*   By: cdeville <cdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 13:19:02 by cdeville          #+#    #+#             */
-/*   Updated: 2024/12/06 19:18:47 by cdeville         ###   ########.fr       */
+/*   Updated: 2024/12/10 11:46:07 by cdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,20 +33,20 @@ public:
 	Fixed & operator = (const Fixed &a);
 
 
-	bool operator > (const Fixed &a);
-	bool operator < (const Fixed &a);
-	bool operator >= (const Fixed &a);
-	bool operator <= (const Fixed &a);
-	bool operator == (const Fixed &a);
-	bool operator != (const Fixed &a);
+	bool operator > (const Fixed &a) const;
+	bool operator < (const Fixed &a) const;
+	bool operator >= (const Fixed &a) const;
+	bool operator <= (const Fixed &a) const;
+	bool operator == (const Fixed &a) const;
+	bool operator != (const Fixed &a) const;
 
-	Fixed operator + (const Fixed &a);
+	Fixed operator + (const Fixed &a) const;
 	Fixed &operator += (const Fixed &a);
-	Fixed operator - (const Fixed &a);
+	Fixed operator - (const Fixed &a) const;
 	Fixed &operator -= (const Fixed &a);
-	Fixed operator * (const Fixed &a);
+	Fixed operator * (const Fixed &a) const;
 	Fixed &operator *= (const Fixed &a);
-	Fixed operator / (const Fixed &a);
+	Fixed operator / (const Fixed &a) const;
 	Fixed &operator /= (const Fixed &a);
 
 	Fixed &operator ++ (void);

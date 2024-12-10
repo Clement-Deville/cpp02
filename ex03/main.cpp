@@ -6,7 +6,7 @@
 /*   By: cdeville <cdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:04:35 by cdeville          #+#    #+#             */
-/*   Updated: 2024/12/09 23:13:27 by cdeville         ###   ########.fr       */
+/*   Updated: 2024/12/10 11:52:11 by cdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ int	main( void )
 	Point A(0, 0);
 	Point B(6, 0);
 	Point C(3, 6);
-	
-	std::cout << 
+
+	std::cout <<
 	"/**============================================\n" <<
 	 "*               Testing INSIDE POINTS\n" <<
 	 "*=============================================**/\n" << std::endl;
@@ -48,7 +48,7 @@ int	main( void )
 		}
 	}
 
-	std::cout << 
+	std::cout <<
 	"\n\n/**============================================\n" <<
 	 "*               Testing EDGE POINTS\n" <<
 	 "*=============================================**/\n" << std::endl;
@@ -74,7 +74,7 @@ int	main( void )
 		}
 	}
 
-	std::cout << 
+	std::cout <<
 	"\n\n/**============================================\n" <<
 	 "*               Testing OUSTIDES POINTS\n" <<
 	 "*=============================================**/\n" << std::endl;
@@ -98,6 +98,16 @@ int	main( void )
 				<< std::endl;
 			}
 		}
+	}
+
+	std::cout <<
+	"\n\n/**============================================\n" <<
+	 "*               Testing DEGENERATE TRIANGLE\n" <<
+	 "*=============================================**/\n" << std::endl;
+	{
+		bsp(Point(0, 3), Point(0, 5), Point(0, 7), Point(0, 0));
+		bsp(Point(-1, 3), Point(5, 3), Point(2, 3), Point(0, 0));
+		bsp(Point(-4, 2), Point(-4, -4), Point(-4, 7), Point(0, 0));
 	}
 	return (0);
 }

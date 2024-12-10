@@ -6,7 +6,7 @@
 /*   By: cdeville <cdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:04:35 by cdeville          #+#    #+#             */
-/*   Updated: 2024/12/05 17:45:31 by cdeville         ###   ########.fr       */
+/*   Updated: 2024/12/10 11:42:29 by cdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int main( void )
 	int x = -1;
 	float y = x;
 
+	if (b > a)
+		std::cout << "a < b" << std::endl;
 	std::cout << "new x: " << x << std::endl;
 	std::cout << "new y: " << y << std::endl;
 
