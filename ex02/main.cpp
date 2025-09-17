@@ -6,7 +6,7 @@
 /*   By: cdeville <cdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:04:35 by cdeville          #+#    #+#             */
-/*   Updated: 2024/12/10 11:42:29 by cdeville         ###   ########.fr       */
+/*   Updated: 2025/09/17 14:53:13 by cdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,15 @@ int main( void )
 	std::cout << b << std::endl;
 	std::cout << (a / b) << std::endl;
 	std::cout << Fixed::max( a, b ) << std::endl;
+
+	Fixed c(20);
+	Fixed d(-2.2f);
+
+	std::cout << "\n";
+	std::cout << " C: " << c << ": should be 20." << std::endl;
+	std::cout << " D: " << d << ": should be -2.2." << std::endl;
+
+	std::cout << "c / d = " << c / d << ": should be around :" << (20 / -2.2) << std::endl;
 
 	std::cout <<
 	"\n/**========================================================================\n" <<

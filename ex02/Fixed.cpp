@@ -6,7 +6,7 @@
 /*   By: cdeville <cdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 13:18:47 by cdeville          #+#    #+#             */
-/*   Updated: 2024/12/10 11:44:56 by cdeville         ###   ########.fr       */
+/*   Updated: 2025/09/17 15:08:47 by cdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -195,12 +195,12 @@ void	print_bit(size_t size, const void *value)
 	{
 		if (i == 7)
 			std::cout << ".";
-		std::cout << ((*(u_int64_t*)value >> i) & 1) ;
+		std::cout << ((*(int64_t*)value >> i) & 1) ;
 	}
 	std::cout << std::endl;
 }
 
-/*	Ici, on caste dans un u_int64_t pour eviter overflow du a l'upscale d'une multiplication
+/*	Ici, on caste dans un int64_t pour eviter overflow du a l'upscale d'une multiplication
 
 	Explications : http://www.coranac.com/tonc/text/fixed.htm */
 
@@ -208,17 +208,17 @@ Fixed Fixed::operator * (const Fixed &a) const
 {
 	Fixed tmp;
 
-	tmp.setRawBits(u_int64_t((this->_FixedPoint_value) * u_int64_t(a._FixedPoint_value)) >> _bit_size);
+	tmp.setRawBits(int64_t((this->_FixedPoint_value) * int64_t(a._FixedPoint_value)) >> _bit_size);
 	return (tmp);
 }
 
 Fixed &Fixed::operator *= (const Fixed &a)
 {
-	this->setRawBits(u_int64_t((this->_FixedPoint_value) * u_int64_t(a._FixedPoint_value)) >> _bit_size);
+	this->setRawBits(int64_t((this->_FixedPoint_value) * int64_t(a._FixedPoint_value)) >> _bit_size);
 	return (*this);
 }
 
-/*	Ici, on caste dans un u_int64_t pour pouvoir upscale notre nombre de
+/*	Ici, on caste dans un int64_t pour pouvoir upscale notre nombre de
 	_bit_size bits pour eviter underflow du a l'underscale d'une division
 	Explications : http://www.coranac.com/tonc/text/fixed.htm */
 
@@ -226,16 +226,16 @@ Fixed Fixed::operator / (const Fixed &a) const
 {
 	Fixed tmp;
 
-	u_int64_t temp_int = u_int64_t(this->getRawBits()) << _bit_size;
-	temp_int /= u_int64_t(a.getRawBits());
+	int64_t temp_int = int64_t(this->getRawBits()) << _bit_size;
+	temp_int /= a.getRawBits();
 	tmp.setRawBits((int)temp_int);
 	return (tmp);
 }
 
 Fixed &Fixed::operator /= (const Fixed &a)
 {
-	u_int64_t temp_int = u_int64_t(this->getRawBits()) << _bit_size;
-	temp_int /= u_int64_t(a.getRawBits());
+	int64_t temp_int = int64_t(this->getRawBits()) << _bit_size;
+	temp_int /= a.getRawBits();
 	this->setRawBits((int)temp_int);
 	return (*this);
 }
